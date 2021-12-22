@@ -108,6 +108,7 @@ echo "[+] git diff-index:"
 git diff-index --quiet HEAD || git commit --message "$COMMIT_MESSAGE"
 
 echo "[+] Pushing git commit"
+echo "[] USER is $USER_NAME"
 echo "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$DESTINATION_REPOSITORY_USERNAME/$DESTINATION_REPOSITORY_NAME.git" --set-upstream "$TARGET_BRANCH"
 # --set-upstream: sets de branch when pushing to a branch that does not exist
 git push "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$DESTINATION_REPOSITORY_USERNAME/$DESTINATION_REPOSITORY_NAME.git" --set-upstream "$TARGET_BRANCH"
